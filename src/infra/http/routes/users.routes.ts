@@ -9,10 +9,10 @@ import { makeGetUserController } from '../factories/controllers/get-user-control
 
 const usersRouter = express.Router()
 
-usersRouter.get('/', adaptRoute(makeGetUserController()) as any)
+usersRouter.post('/', adaptRoute(makeCreateUserController()) as any)
 
 usersRouter.use(adaptMiddleware(makeEnsureAuthenticatedMiddleware()) as any)
 
-usersRouter.post('/', adaptRoute(makeCreateUserController()) as any)
+usersRouter.get('/', adaptRoute(makeGetUserController()) as any)
 
 export { usersRouter }

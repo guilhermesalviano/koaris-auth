@@ -1,4 +1,4 @@
-# I Want to Ask Project
+# Koaris Auth Project
 ## Arquitetura
 Clean Architecture:
 <img src="./.docs/architecture.PNG" alt="Arquitetura" >
@@ -39,11 +39,11 @@ Clean Architecture:
 #### Passos de Instalação
 1. Clone o repositório:
 ```bash
-git clone git@github.com:guilhermesalviano/Iwanttoask-api.git
+git clone git@github.com:guilhermesalviano/koaris-auth.git
 ```
 2. Entre na pasta do projeto:
 ```bash
-cd Iwanttoask-api
+cd koaris-auth
 ```
 3. Instale as dependências:
 ```bash
@@ -57,6 +57,33 @@ Crie um arquivo .env baseado no .env.example e adicione suas configurações (ba
 npm run dev
 ```
 6. Acesse o projeto em http://localhost:3333
+
+## Docker
+
+Init docker file
+
+build the image with
+```shellscript
+docker build -t koaris-auth .
+```
+
+and you can use the image with
+```shellscript
+docker run -p 3333:3333 -d koaris-auth
+```
+
+to see others containers ou get logs
+```shellscript
+docker ps -a
+docker logs {IdContainer}
+```
+
+using docker-compose
+```shellscript
+docker-compose up --build -d
+docker-compose up -d
+docker-compose down
+```
 
 ## Usando o Prisma:
 1. Instale o prisma e inicie.

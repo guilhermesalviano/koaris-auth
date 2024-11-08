@@ -1,20 +1,24 @@
 {
-  "name": "iwantto-api",
+  "name": "koaris-auth",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register src/infra/http/server.ts",
-    "start": "NODE_ENV=production node dist/src/server.js",
+    "build": "rm -rf dist && tsc -p tsconfig.json --outDir dist --removeComments",
+    "start": "NODE_ENV=production node -r tsconfig-paths/register dist/src/infra/http/server.js",
     "test": "vitest",
-    "lint": "npx eslint 'src/**/*.{ts}' --fix"
+    "lint": "npx eslint 'src/**/*.{ts}' --fix",
+    "docker:start": "docker compose up -d",
+    "docker:stop": "docker compose stop",
+    "docker:drop": "docker compose down"
   },
   "prisma": {
     "schema": "./prisma/schema.prisma"
   },
   "keywords": [],
-  "author": "",
+  "author": "guilhermesalviano",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.14.0",
