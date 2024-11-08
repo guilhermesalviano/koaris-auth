@@ -23,6 +23,7 @@
   "exclude": [
     "node_modules",
     "tools",
-    "dist"
+    "dist",
+    "./src/test/factories/user-factory.js"
   ]
 }
