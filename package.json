@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register src/infra/http/server.ts",
     "build": "rm -rf dist && tsc -p tsconfig.json --removeComments",
-    "start": "NODE_ENV=production node -r tsconfig-paths/register dist/src/infra/http/server.js",
+    "start": "NODE_ENV=production node -r tsconfig-paths/register dist/infra/http/server.js",
     "test": "vitest",
     "lint": "npx eslint \"./src/**/*.ts\" --config ./eslint.config.mjs --fix",
     "docker:start": "docker compose up -d",

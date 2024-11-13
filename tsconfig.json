@@ -14,10 +14,10 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@modules/*": ["./src/modules/*", "./dist/src/modules/*"],
-      "@infra/*": ["./src/infra/*", "./dist/src/infra/*"],
-      "@core/*": ["./src/core/*", "./dist/src/core/*"],
-      "@config/*": ["./src/config/*", "./dist/src/config/*"],
+      "@modules/*": ["./src/modules/*", "./dist/modules/*"],
+      "@infra/*": ["./src/infra/*", "./dist/infra/*"],
+      "@core/*": ["./src/core/*", "./dist/core/*"],
+      "@config/*": ["./src/config/*", "./dist/config/*"],
       "@test/*": ["./src/test/*"]
     }
   },
@@ -26,6 +26,8 @@
     "tools",
     "dist",
     "src/test/**",
+    "vite.config.ts",
+    "vitest.config.ts",
     "**/*.spec.ts",
   ]
 }
