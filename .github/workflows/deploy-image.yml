@@ -1,0 +1,56 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    name: 'Build and Push Image to AWS ECR'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Generate sha
+      id: generate_sha
+      run: |
+        SHA=$(echo $GITHUB_SHA | head -c7)
+        echo "sha=$SHA" >> $GITHUB_OUTPUT
+    
+    - name: Build docker image
+      run: docker build -t koaris-auth:${{ steps.generate_sha.outputs.sha }} .
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Log in to Amazon ECR
+      uses: aws-actions/amazon-ecr-login@v2
+
+    - name: Tag Docker image as latest
+      run: |
+        docker tag koaris-auth:${{ steps.generate_sha.outputs.sha }} koaris-auth:latest
+
+    - name: Create ECR Repository if it does not exist
+      run: |
+        aws ecr describe-repositories --repository-names koaris-auth || aws ecr create-repository --repository-name koaris-auth
+
+    - name: List Docker images
+      run: |
+        docker images
+
+    - name: Tag Docker image for ECR
+      run: |
+        docker tag koaris-auth:${{ steps.generate_sha.outputs.sha }} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/koaris-auth:${{ steps.generate_sha.outputs.sha }}
+        docker tag koaris-auth:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/koaris-auth:latest
+
+    - name: Push Docker image to ECR
+      run: |
+        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/koaris-auth:${{ steps.generate_sha.outputs.sha }}
+        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/koaris-auth:latest
