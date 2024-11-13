@@ -8,6 +8,7 @@ src/test/*
 
 # Files
 Dockerfile
+docker-compose.yml
 .dockerignore
 .gitignore
 README.md

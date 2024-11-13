@@ -10,3 +10,27 @@ services:
       - 3333:3333
     environment:
       - NODE_ENV=production
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    command: >
+      sh -c "
+        yarn exec prisma migrate deploy
+      "
+
+  postgres:
+    image: bitnami/postgresql:latest
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
+    driver: local

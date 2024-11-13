@@ -78,7 +78,7 @@ docker logs {IdContainer}
 docker rm <container_id>
 ```
 
-using docker-compose
+using docker-compose - only to locally or staging containers
 ```shellscript
 docker-compose up --build -d
 docker-compose up -d
@@ -102,14 +102,22 @@ npm install @prisma -D
 npx prisma init
 ```
 2. Configure seu schema com o arquivo que foi iniciado.
-2.1 Configure seu .env com a URL de conexão.
+2.1. Configure seu .env com a URL de conexão.
 
 3. Crie migration files
 ```bash
 npx prisma migrate dev --name migrations
 ```
-4. Ative as migrations. 
+4. Ative as migrations
 ```bash
 npx prisma generate
+```
+5. Adaptar o SQL para um novo target
+```bash
+npx prisma migrate reset
+```
+6. Para rodar as migrations em um novo Database
+```bash
+npx prisma migrate deploy
 ```
 Fim.
