@@ -18,8 +18,8 @@ resource "aws_ecs_task_definition" "koaris-auth_task" {
     essential = true
 
     portMappings = [{
-      containerPort = 3000
-      hostPort      = 3000
+      containerPort = 3333
+      hostPort      = 3333
       protocol      = "tcp"
     }]
 

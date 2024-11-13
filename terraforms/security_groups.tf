@@ -3,8 +3,8 @@ resource "aws_security_group" "my_security_group" {
   vpc_id = aws_vpc.my_vpc.id
 
   ingress {
-    from_port   = 3000
-    to_port     = 3000
+    from_port   = 3333
+    to_port     = 3333
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]  # Allow access from anywhere (adjust as needed)
   }
