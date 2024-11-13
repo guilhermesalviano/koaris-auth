@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
 
-  iwantto:
+  prod:
     build: 
       context: .
     container_name: koaris-auth

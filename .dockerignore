@@ -1,0 +1,15 @@
+# Dir's
+node_modules
+terraforms
+dist
+.git*
+src/test/*
+
+# Files
+Dockerfile
+.dockerignore
+.gitignore
+README.md
+eslint.config.mjs
+vite.config.ts
+vitest.config.ts

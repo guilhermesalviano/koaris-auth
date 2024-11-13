@@ -31,6 +31,7 @@ WORKDIR /usr/src/app
 
 COPY --from=dependecies /usr/src/app/node_modules ./node_modules
 COPY --from=dependecies /usr/src/app/dist ./dist
+COPY --from=dependecies /usr/src/app/tsconfig.json ./tsconfig.json
 COPY --from=dependecies /usr/src/app/package.json ./package.json
 
 EXPOSE 3333

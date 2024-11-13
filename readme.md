@@ -71,11 +71,11 @@ and you can use the image with
 ```shellscript
 docker run -p 3333:3333 -d koaris-auth
 ```
-
 to see others containers ou get logs
 ```shellscript
 docker ps -a
 docker logs {IdContainer}
+docker rm <container_id>
 ```
 
 using docker-compose
@@ -83,6 +83,16 @@ using docker-compose
 docker-compose up --build -d
 docker-compose up -d
 docker-compose down
+```
+
+## Usando o terraform
+using terraform
+```shellscript
+terraform init
+terraform plan
+terraform apply
+--
+terraform destroy
 ```
 
 ## Usando o Prisma:

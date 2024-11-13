@@ -1,8 +1,8 @@
-import { Email } from "@core/entities/user/email"
-import { JWT } from "@core/entities/user/jwt"
-import { Name } from "@core/entities/user/name"
-import { Password } from "@core/entities/user/password"
-import { User } from "@core/entities/user/user"
+import { Email } from "../../core/entities/user/email"
+import { JWT } from "../../core/entities/user/jwt"
+import { Name } from "../../core/entities/user/name"
+import { Password } from "../../core/entities/user/password"
+import { User } from "../../core/entities/user/user"
 
 
 type UserOverrides = {

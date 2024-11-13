@@ -3,3 +3,5 @@ node_modules
 *.toml
 *.db*
 dist
+.terraform*
+terraform.tfstate*
