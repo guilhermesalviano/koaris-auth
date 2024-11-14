@@ -4,8 +4,8 @@ CREATE TABLE "users" (
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "updated_at" DATETIME NOT NULL,
-    "created_at" DATETIME NOT NULL
+    "updated_at" TIMESTAMP NOT NULL,
+    "created_at" TIMESTAMP NOT NULL
 );
 
 -- CreateIndex
