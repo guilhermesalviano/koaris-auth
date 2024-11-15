@@ -1,4 +1,4 @@
-import { Controller } from '@core/controllers/controller'
+import { Controller } from '@core/infra/controller'
 import { HttpResponse, fail, ok } from '@infra/http/responses/http-response'
 import { GetUser } from './get-user'
 

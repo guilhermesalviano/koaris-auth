@@ -1,5 +1,5 @@
 
-import { JWT } from '@core/entities/user/jwt'
+import { JWT } from '@modules/users/domain/user/jwt'
 import { IUsersRepository } from '@modules/users/repositories/iuser-repository'
 
 type TokenResponse = {

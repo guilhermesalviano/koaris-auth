@@ -1,4 +1,4 @@
-import { Middleware } from "@core/middleware"
+import { Middleware } from "@core/infra/middleware"
 
 import { EnsureAuthenticatedMiddleware } from "@infra/http/middlewares/ensure-authenticated-middleware"
 

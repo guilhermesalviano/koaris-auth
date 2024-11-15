@@ -1,7 +1,7 @@
-import { Controller } from '@core/controllers/controller'
+import { Controller } from '@core/infra/controller'
 import { HttpResponse, created, fail } from '@infra/http/responses/http-response'
 import { CreateUser } from './create-user'
-import { Password } from '@core/entities/user/password'
+import { Password } from '@modules/users/domain/user/password'
 
 type CreateUserControllerRequest = {
   name: string

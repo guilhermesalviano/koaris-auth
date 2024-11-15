@@ -1,4 +1,4 @@
-import { Controller } from '@core/controllers/controller'
+import { Controller } from '@core/infra/controller'
 import { PrismaUsersRepository } from '@modules/users/repositories/prisma/users-repository'
 import { AuthenticateUser } from '@modules/users/use-cases/authenticate-user/authenticate-user'
 import { AuthenticateUserController } from '@modules/users/use-cases/authenticate-user/authenticate-user-controller'

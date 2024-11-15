@@ -1,6 +1,6 @@
-import { User } from '@core/entities/user/user'
+import { User } from '@modules/users/domain/user/user'
 import { IUsersRepository } from '../../repositories/iuser-repository'
-import { Password } from '@core/entities/user/password'
+import { Password } from '@modules/users/domain/user/password'
 
 interface CreateUserRequest {
   name: string

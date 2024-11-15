@@ -1,4 +1,4 @@
-import { User } from '@core/entities/user/user'
+import { User } from '@modules/users/domain/user/user'
 
 export interface IUsersRepository {
   get(user_id?: string): Promise<User[] | void>

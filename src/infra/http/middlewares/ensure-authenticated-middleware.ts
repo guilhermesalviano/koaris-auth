@@ -1,5 +1,5 @@
-import { Middleware } from '@core/middleware'
-import { JWT } from '@core/entities/user/jwt'
+import { Middleware } from '@core/infra/middleware'
+import { JWT } from '@modules/users/domain/user/jwt'
 import { HttpResponse, forbidden, ok } from '../responses/http-response'
 import { AccessDeniedError } from '../errors/access-danied-error'
 
