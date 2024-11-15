@@ -112,7 +112,7 @@ npx prisma migrate dev --name migrations
 ```bash
 npx prisma generate
 ```
-5. Adaptar o SQL para um novo target
+5. Rodar as migrations novamente
 ```bash
 npx prisma migrate reset
 ```

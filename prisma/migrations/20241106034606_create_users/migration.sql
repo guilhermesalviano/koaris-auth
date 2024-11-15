@@ -5,7 +5,7 @@ CREATE TABLE "users" (
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "updated_at" TIMESTAMP NOT NULL,
-    "created_at" TIMESTAMP NOT NULL
+    "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 -- CreateIndex
