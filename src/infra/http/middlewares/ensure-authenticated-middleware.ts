@@ -1,7 +1,6 @@
 import { Middleware } from '@core/middleware'
-import { decode } from 'jsonwebtoken'
+import { JWT } from '@core/entities/user/jwt'
 import { HttpResponse, forbidden, ok } from '../responses/http-response'
-import { fail } from 'assert'
 import { AccessDeniedError } from '../errors/access-danied-error'
 
 type EnsureAuthenticatedMiddlewareRequest = {
@@ -20,20 +19,25 @@ export class EnsureAuthenticatedMiddleware implements Middleware {
   ): Promise<HttpResponse> {
     try {
       const { accessToken } = request
-
-      if (accessToken) {
-        try {
-          const decoded = decode(accessToken) as DecodedJwt
-
-          return ok({ userId: decoded.sub })
-        } catch (err) {
-          return forbidden(new AccessDeniedError())
-        }
+      
+      if (!accessToken) {
+        return forbidden(new AccessDeniedError())
       }
 
-      return forbidden(new AccessDeniedError())
+      try {
+        const decoded = JWT.decodeToken(accessToken) as DecodedJwt
+        
+        // tratar melhor está devolutiva
+        if (!decoded.sub) {
+          return forbidden(new AccessDeniedError())
+        }
+
+        return ok({ userId: decoded.sub })
+      } catch (err) {
+        return forbidden(new AccessDeniedError())
+      }
     } catch (error: any) {
-      return fail(error)
+      return forbidden(new AccessDeniedError())
     }
   }
 }
