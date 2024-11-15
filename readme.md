@@ -120,4 +120,14 @@ npx prisma migrate reset
 ```bash
 npx prisma migrate deploy
 ```
+
+## To do:
+- [ ] inactive a user
+- [ ] roles table
+    - Admin: Can perform any action (create, read, update, delete).
+    - User: Can only perform specific actions (e.g., read, create).
+    - Viewer: Can only view data (read).
+- [ ] allow clients from users create auth - a many x many table
+- [ ] store the access token in a reference table - allow destroy a token 
+
 Fim.
