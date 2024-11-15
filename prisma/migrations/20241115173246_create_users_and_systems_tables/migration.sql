@@ -13,8 +13,8 @@ CREATE TABLE "users" (
 -- CreateTable
 CREATE TABLE "systems" (
     "id" TEXT NOT NULL,
-    "system_name" TEXT NOT NULL,
-    "system_description" TEXT,
+    "name" TEXT NOT NULL,
+    "description" TEXT,
     "updated_at" TIMESTAMP(3) NOT NULL,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
