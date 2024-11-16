@@ -1,8 +1,8 @@
-import { Email } from "../../core/entities/user/email"
-import { JWT } from "../../core/entities/user/jwt"
-import { Name } from "../../core/entities/user/name"
-import { Password } from "../../core/entities/user/password"
-import { User } from "../../core/entities/user/user"
+import { Email } from "../../modules/users/domain/user/email"
+import { JWT } from "../../modules/users/domain/user/jwt"
+import { Name } from "../../modules/users/domain/user/name"
+import { Password } from "../../modules/users/domain/user/password"
+import { User } from "../../modules/users/domain/user/user"
 
 
 type UserOverrides = {

@@ -1,5 +1,5 @@
 import { User } from '@modules/users/domain/user/user'
-import { IUsersRepository } from '../../repositories/iuser-repository'
+import { IUsersRepository } from '@modules/users/repositories/iuser-repository'
 
 interface GetUserRequest {
   user_id?: string

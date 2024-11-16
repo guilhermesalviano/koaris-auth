@@ -1,7 +1,7 @@
 import { ISystemsRepository } from '../isystem-repository'
 import { System } from '@modules/systems/domain/system/system'
 
-export class InMemoryUsersRepository implements ISystemsRepository {
+export class InMemorySystemsRepository implements ISystemsRepository {
   constructor(public items: System[] = []) {}
 
   async get(system_id?: string): Promise<System[] | void> {

@@ -1,11 +1,11 @@
 import request from 'supertest'
 import { afterAll, describe, expect, it } from 'vitest'
-
-import { app } from '@infra/http/app'
-import { prisma } from '@infra/prisma/client'
-import { Password } from '@core/entities/user/password'
 import { Chance } from 'chance'
-import { createAndAuthenticateUser } from '@test/factories/user-factory'
+
+import { app } from '../../../../infra/http/app'
+import { prisma } from '../../../../infra/prisma/client'
+import { Password } from '../../domain/user/password'
+import { createAndAuthenticateUser } from '../../../../test/factories/user-factory'
 
 const {
   jwt: { token },

@@ -1,12 +1,12 @@
 import { beforeAll, describe, expect, it } from 'vitest'
 
-import { User } from '@core/entities/user/user'
 import { CreateUser } from '../create-user/create-user'
 import { InMemoryUsersRepository } from '../../repositories/in-memory/in-memory-users-repository'
 import { IUsersRepository } from '../../repositories/iuser-repository'
 import { GetUser } from './get-user'
 import { Chance } from 'chance'
-import { Password } from '@core/entities/user/password'
+import { User } from '../../domain/user/user'
+import { Password } from '../../domain/user/password'
 
 let usersRepository: IUsersRepository
 const chance = new Chance()

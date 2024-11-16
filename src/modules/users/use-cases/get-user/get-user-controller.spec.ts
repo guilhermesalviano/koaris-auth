@@ -1,8 +1,8 @@
 import request from 'supertest'
-
 import { describe, expect, it } from 'vitest'
-import { app } from '@infra/http/app'
-import { createAndAuthenticateUser } from '@test/factories/user-factory'
+
+import { app } from '../../../../infra/http/app'
+import { createAndAuthenticateUser } from '../../../../test/factories/user-factory'
 
 const {
   jwt: { token },

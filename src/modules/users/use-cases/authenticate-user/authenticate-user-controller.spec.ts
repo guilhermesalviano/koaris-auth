@@ -2,8 +2,8 @@ import bcrypt from 'bcryptjs'
 import request from 'supertest'
 import { v4 as uuid } from 'uuid'
 
-import { app } from '@infra/http/app'
-import { prisma } from '@infra/prisma/client'
+import { app } from '../../../../infra/http/app'
+import { prisma } from '../../../../infra/prisma/client'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { Chance } from 'chance'
 

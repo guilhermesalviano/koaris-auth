@@ -1,5 +1,5 @@
 import { User } from '@modules/users/domain/user/user'
-import { IUsersRepository } from '../../repositories/iuser-repository'
+import { IUsersRepository } from '@modules/users/repositories/iuser-repository'
 import { Password } from '@modules/users/domain/user/password'
 
 interface CreateUserRequest {

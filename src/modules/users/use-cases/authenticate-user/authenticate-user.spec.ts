@@ -1,8 +1,8 @@
-import { createUser } from "@test/factories/user-factory"
+import { createUser } from "../../../../test/factories/user-factory"
 
-import { IUsersRepository } from "@modules/users/repositories/iuser-repository"
+import { IUsersRepository } from "../../repositories/iuser-repository"
 import { AuthenticateUser } from "./authenticate-user"
-import { InMemoryUsersRepository } from "@modules/users/repositories/in-memory/in-memory-users-repository"
+import { InMemoryUsersRepository } from "../../repositories/in-memory/in-memory-users-repository"
 import { beforeEach, describe, expect, it } from "vitest"
 
 let usersRepository: IUsersRepository
