@@ -20,6 +20,7 @@ describe('Create a System', () => {
         name: "Iwantto",
         description: "description",
         updated_at: new Date(),
+        created_at: new Date(),
       }),
     ).resolves.toBeInstanceOf(System)
   })

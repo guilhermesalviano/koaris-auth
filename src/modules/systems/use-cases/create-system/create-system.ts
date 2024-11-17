@@ -5,6 +5,7 @@ interface CreateSystemRequest {
     name: string
     description: string
     updated_at: Date
+    created_at: Date
 }
 
 type CreateSystemResponse = System
@@ -15,7 +16,8 @@ export class CreateSystem {
   async execute({
     name,
     description,
-    updated_at
+    updated_at,
+    created_at
   }: CreateSystemRequest): Promise<CreateSystemResponse> {
     const systemAlreadyExists = await this.systemsRepository.findByName(name)
 
@@ -26,7 +28,8 @@ export class CreateSystem {
     const system = new System({
       name,
       description,
-      updated_at
+      updated_at,
+      created_at
     })
 
     await this.systemsRepository.create(system)
