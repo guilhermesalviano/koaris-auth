@@ -5,7 +5,7 @@ interface IUserSystemsProps {
   login_active: boolean
 }
 
-export class System {
+export class UserSystems {
   private props: IUserSystemsProps
 
   get user_systems_id(): string | undefined {
@@ -30,9 +30,9 @@ export class System {
 
   static create(
     props: IUserSystemsProps
-  ): System {
-    const system = new System(props)
+  ): UserSystems {
+    const userSystems = new UserSystems(props)
 
-    return system
+    return userSystems
   }
 }

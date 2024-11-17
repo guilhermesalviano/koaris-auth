@@ -2,7 +2,7 @@ import { UserSystems } from "@prisma/client"
 import { IUserSystemsRepository } from "../iuser-systems-repository"
 
 
-export class InMemoryUsersRepository implements IUserSystemsRepository {
+export class InMemoryUserSystemsRepository implements IUserSystemsRepository {
   constructor(public items: UserSystems[] = []) {}
 
   async get(userSystems_id?: string): Promise<UserSystems[] | void> {
