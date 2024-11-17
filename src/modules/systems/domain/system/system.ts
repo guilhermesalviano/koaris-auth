@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid'
 interface ISystemProps {
   system_id: string
   name: string
-  description: string
+  description: string | null
   updated_at: Date
   created_at?: Date | string
 }
@@ -19,8 +19,8 @@ export class System {
     return this.props.name
   }
 
-  get description(): string {
-    return this.props.description
+  get description(): string | null {
+    return this.props?.description
   }
 
   get updated_at(): Date {
