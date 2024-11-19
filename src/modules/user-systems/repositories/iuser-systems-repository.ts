@@ -1,5 +1,4 @@
-import { UserSystems } from "@prisma/client"
-
+import { UserSystems } from "../domain/user-systems/user-systems"
 
 export interface IUserSystemsRepository {
   get(system_id?: string): Promise<UserSystems[] | void>
