@@ -1,4 +1,3 @@
-
 import { UserSystems } from '@modules/user-systems/domain/user-systems/user-systems'
 import { IUserSystemsRepository } from '../iuser-systems-repository'
 import { prisma } from '@infra/prisma/client'
