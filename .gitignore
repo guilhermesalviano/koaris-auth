@@ -5,3 +5,5 @@ node_modules
 dist
 .terraform*
 terraform.tfstate*
+
+lambda-build
