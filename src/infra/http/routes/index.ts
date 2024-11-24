@@ -6,7 +6,7 @@ import { systemsRouter } from './systems.routes';
 import { userSystemsRouter } from './user-systems.routes';
 
 const routes = Router()
-routes.get('/status', (req: Request, res: Response) => {
+routes.get('/', (req: Request, res: Response) => {
   res.send({ message: "Everything's fine!" });
 })
 

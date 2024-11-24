@@ -7,3 +7,7 @@ dist
 terraform.tfstate*
 
 lambda-build
+
+.serverless
+
+.DS_Store

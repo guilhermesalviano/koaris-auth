@@ -1,6 +1,7 @@
 # Dir's
 node_modules
-terraforms
+terraforms-ecs
+terraforms-lambda
 dist
 .docs
 .git*

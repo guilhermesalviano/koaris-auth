@@ -4,7 +4,7 @@ import { app } from '../app'
 
 describe('API Status', () => {
   it('should return 200 OK for the root endpoint', async () => {
-    const response = await request(app).get('/status')
+    const response = await request(app).get('/')
     expect(response.status).toBe(200)
     expect(response.text).toBe(`{"message":"Everything's fine!"}`)
   })

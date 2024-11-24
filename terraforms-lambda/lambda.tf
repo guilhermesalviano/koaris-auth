@@ -1,7 +1,7 @@
 resource "aws_lambda_function" "app" {
     function_name    = "koaris-auth"
     role             = aws_iam_role.handler_lambda_exec.arn
-    handler          = "src/lambda.handler"
+    handler          = "dist/infra/http/lambda.handler"
     s3_bucket        = aws_s3_bucket.lambda_bucket.id
     s3_key           = aws_s3_object.lambda_handler.key
     source_code_hash = filebase64sha256(data.external.lambda_zip.result.file_path)
@@ -14,7 +14,7 @@ resource "aws_lambda_function" "app" {
 
     environment {
       variables = {
-        LAMBDA_HANDLER = "src/lambda.handler"
+        LAMBDA_HANDLER = "dist/infra/http/lambda.handler"
         APPLICATION_NAME="koaris-auth"
         APPLICATION_VERSION="$LATEST"
       }
@@ -66,6 +66,13 @@ resource "aws_cloudwatch_log_group" "handler" {
   retention_in_days = 14
 }
 
+#data "archive_file" "lambda_handler" {
+#    type = "zip"
+
+#    source_dir  = data.external.lambda_zip.result.file_path
+#    output_path = "../${data.external.lambda_zip.result.file_path}/lambda.zip"
+#}
+
 data "external" "lambda_zip" {
   program = ["bash", "scripts/generateLambdaZip.sh"]
 
@@ -74,13 +81,6 @@ data "external" "lambda_zip" {
     application_name = "koaris-auth"
   }
 }
-
-#data "archive_file" "lambda_handler" {
-#    type = "zip"
-
-#    source_dir  = data.external.lambda_zip.result.file_path
-#    output_path = "../${data.external.lambda_zip.result.file_path}/lambda.zip"
-#}
 
 resource "aws_s3_object" "lambda_handler" {
     bucket = aws_s3_bucket.lambda_bucket.id

@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     /* Language and Environment */
-    "target": "ES2018",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "target": "ES6",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     /* Modules */
-    "module": "CommonJS",                                /* Specify what module code is generated. */
+    "module": "commonjs",                                /* Specify what module code is generated. */
     "moduleResolution": "Node",
     "outDir": "./dist",
     "esModuleInterop": true,    

@@ -2,7 +2,7 @@
   "name": "koaris-auth",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/src/infra/http/server.js",
+  "main": "dist/infra/http/server.js",
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register src/infra/http/server.ts",
@@ -22,6 +22,7 @@
   "author": "guilhermesalviano",
   "license": "ISC",
   "devDependencies": {
+    "@types/aws-serverless-express": "^3.3.10",
     "@eslint/js": "^9.14.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/chance": "^1.1.6",
@@ -37,6 +38,7 @@
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.12.0",
     "prisma": "^5.22.0",
+    "serverless-offline": "^14.3.4",
     "supertest": "^7.0.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3",
@@ -46,13 +48,13 @@
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
-    "tsconfig-paths": "^4.2.0",
+    "aws-serverless-express": "^3.4.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "node": "^22.11.0",
+    "tsconfig-paths": "^4.2.0",
     "uuid": "^11.0.2"
   }
 }

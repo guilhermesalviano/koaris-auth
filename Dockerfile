@@ -13,6 +13,7 @@ COPY . .
 
 RUN yarn install
 RUN yarn run build
+RUN rm -rf node_modules
 
 # Final image
 FROM node:20-alpine AS deploy
@@ -29,14 +30,17 @@ ENV TZ 'America/Sao_Paulo'
 
 WORKDIR /usr/src/app
 
-COPY --from=dependecies /usr/src/app/node_modules ./node_modules
+# COPY --from=dependecies /usr/src/app/node_modules ./node_modules
 COPY --from=dependecies /usr/src/app/dist ./dist
 COPY --from=dependecies /usr/src/app/prisma ./prisma
 COPY --from=dependecies /usr/src/app/tsconfig.json ./tsconfig.json
 COPY --from=dependecies /usr/src/app/package.json ./package.json
+
+RUN yarn install --production
 
 EXPOSE 3333
 
 USER node
 
 CMD ["yarn", "run", "start"]
+# CMD [ "app.handler" ]
