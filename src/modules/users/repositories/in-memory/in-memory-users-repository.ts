@@ -1,4 +1,4 @@
-import { User } from '@modules/users/domain/user/user'
+import { User } from '../../../../modules/users/domain/user/user'
 import { IUsersRepository } from '../iuser-repository'
 
 export class InMemoryUsersRepository implements IUsersRepository {

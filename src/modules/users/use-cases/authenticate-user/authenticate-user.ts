@@ -1,6 +1,6 @@
 
-import { JWT } from '@modules/users/domain/user/jwt'
-import { IUsersRepository } from '@modules/users/repositories/iuser-repository'
+import { JWT } from '../../../../modules/users/domain/user/jwt'
+import { IUsersRepository } from '../../../../modules/users/repositories/iuser-repository'
 
 type TokenResponse = {
   token: string

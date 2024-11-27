@@ -1,5 +1,5 @@
-import { UserSystems } from '@modules/user-systems/domain/user-systems/user-systems'
-import { IUserSystemsRepository } from '@modules/user-systems/repositories/iuser-systems-repository'
+import { UserSystems } from '../../../../modules/user-systems/domain/user-systems/user-systems'
+import { IUserSystemsRepository } from '../../../../modules/user-systems/repositories/iuser-systems-repository'
 
 interface CreateUserSystemsRequest {
   user_id: string

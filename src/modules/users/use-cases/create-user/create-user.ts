@@ -1,6 +1,6 @@
-import { User } from '@modules/users/domain/user/user'
-import { IUsersRepository } from '@modules/users/repositories/iuser-repository'
-import { Password } from '@modules/users/domain/user/password'
+import { User } from '../../../../modules/users/domain/user/user'
+import { IUsersRepository } from '../../../../modules/users/repositories/iuser-repository'
+import { Password } from '../../../../modules/users/domain/user/password'
 
 interface CreateUserRequest {
   name: string

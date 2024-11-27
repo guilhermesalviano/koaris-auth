@@ -1,5 +1,5 @@
-import { System } from '@modules/systems/domain/system/system'
-import { ISystemsRepository } from '@modules/systems/repositories/isystem-repository'
+import { System } from '../../../../modules/systems/domain/system/system'
+import { ISystemsRepository } from '../../../../modules/systems/repositories/isystem-repository'
 
 interface CreateSystemRequest {
     name: string

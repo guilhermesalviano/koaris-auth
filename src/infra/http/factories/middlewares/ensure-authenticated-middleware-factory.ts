@@ -1,6 +1,6 @@
-import { Middleware } from "@core/infra/middleware"
+import { Middleware } from "../../../../core/infra/middleware"
 
-import { EnsureAuthenticatedMiddleware } from "@infra/http/middlewares/ensure-authenticated-middleware"
+import { EnsureAuthenticatedMiddleware } from "../../../../infra/http/middlewares/ensure-authenticated-middleware"
 
 export function makeEnsureAuthenticatedMiddleware(): Middleware {
   const ensureAuthenticatedMiddleware = new EnsureAuthenticatedMiddleware()

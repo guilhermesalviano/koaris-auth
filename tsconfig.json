@@ -12,14 +12,6 @@
     "strict": true,                                      /* Enable all strict type-checking options. */
     "skipLibCheck": true,                                /* Skip type checking all .d.ts files. */
     "resolveJsonModule": true,
-    "baseUrl": ".",
-    "paths": {
-      "@modules/*": ["./src/modules/*", "./dist/modules/*"],
-      "@infra/*": ["./src/infra/*", "./dist/infra/*"],
-      "@core/*": ["./src/core/*", "./dist/core/*"],
-      "@config/*": ["./src/config/*", "./dist/config/*"],
-      "@test/*": ["./src/test/*"]
-    }
   },
   "exclude": [
     "node_modules",

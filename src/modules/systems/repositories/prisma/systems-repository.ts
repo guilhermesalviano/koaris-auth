@@ -1,6 +1,6 @@
-import { System } from '@modules/systems/domain/system/system'
+import { System } from '../../../../modules/systems/domain/system/system'
 import { ISystemsRepository } from '../isystem-repository'
-import { prisma } from '@infra/prisma/client'
+import { prisma } from '../../../../infra/prisma/client'
 
 export class PrismaSystemsRepository implements ISystemsRepository {
   async get(system_id?: string): Promise<System[] | void> {

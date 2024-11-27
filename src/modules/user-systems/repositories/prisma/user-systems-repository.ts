@@ -1,6 +1,6 @@
-import { UserSystems } from '@modules/user-systems/domain/user-systems/user-systems'
+import { UserSystems } from '../../../../modules/user-systems/domain/user-systems/user-systems'
 import { IUserSystemsRepository } from '../iuser-systems-repository'
-import { prisma } from '@infra/prisma/client'
+import { prisma } from '../../../../infra/prisma/client'
 
 export class PrismaUserSystemsRepository implements IUserSystemsRepository {
   async get(user_systems_id?: string): Promise<UserSystems[] | void> {

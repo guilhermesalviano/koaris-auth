@@ -1,5 +1,5 @@
 import { ISystemsRepository } from '../isystem-repository'
-import { System } from '@modules/systems/domain/system/system'
+import { System } from '../../../../modules/systems/domain/system/system'
 
 export class InMemorySystemsRepository implements ISystemsRepository {
   constructor(public items: System[] = []) {}

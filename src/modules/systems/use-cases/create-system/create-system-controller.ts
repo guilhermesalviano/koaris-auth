@@ -1,5 +1,5 @@
-import { Controller } from '@core/infra/controller'
-import { HttpResponse, created, fail } from '@infra/http/responses/http-response'
+import { Controller } from '../../../../core/infra/controller'
+import { HttpResponse, created, fail } from '../../../../infra/http/responses/http-response'
 import { CreateSystem } from './create-system'
 
 type CreateSystemControllerRequest = {

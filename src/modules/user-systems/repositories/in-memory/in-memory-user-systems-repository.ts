@@ -1,4 +1,4 @@
-import { UserSystems } from '@modules/user-systems/domain/user-systems/user-systems'
+import { UserSystems } from '../../../../modules/user-systems/domain/user-systems/user-systems'
 import { IUserSystemsRepository } from "../iuser-systems-repository"
 
 

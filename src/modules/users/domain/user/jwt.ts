@@ -1,6 +1,6 @@
 import { sign, verify } from 'jsonwebtoken'
 
-import { auth } from '@config/auth'
+import { auth } from '../../../../config/auth'
 import { User } from './user'
 
 interface JWTData {

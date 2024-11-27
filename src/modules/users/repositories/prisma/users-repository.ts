@@ -1,6 +1,6 @@
-import { User } from '@modules/users/domain/user/user'
+import { User } from '../../../../modules/users/domain/user/user'
 import { IUsersRepository } from '../iuser-repository'
-import { prisma } from '@infra/prisma/client'
+import { prisma } from '../../../../infra/prisma/client'
 import { UserMapper } from '../../mappers/user-mapper'
 
 export class PrismaUsersRepository implements IUsersRepository {

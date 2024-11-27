@@ -1,7 +1,7 @@
-import { Email } from '@modules/users/domain/user/email'
-import { Name } from '@modules/users/domain/user/name'
-import { Password } from '@modules/users/domain/user/password'
-import { User } from '@modules/users/domain/user/user'
+import { Email } from '../../../modules/users/domain/user/email'
+import { Name } from '../../../modules/users/domain/user/name'
+import { Password } from '../../../modules/users/domain/user/password'
+import { User } from '../../../modules/users/domain/user/user'
 
 import { User as PersistenceUser } from '@prisma/client'
 

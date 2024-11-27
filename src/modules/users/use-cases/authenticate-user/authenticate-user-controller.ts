@@ -1,7 +1,7 @@
 
-import { Controller } from '@core/infra/controller'
+import { Controller } from '../../../../core/infra/controller'
 import { AuthenticateUser } from './authenticate-user'
-import { HttpResponse, clientError, fail, ok } from '@infra/http/responses/http-response'
+import { HttpResponse, clientError, fail, ok } from '../../../../infra/http/responses/http-response'
 
 type AuthenticateUserControllerRequest = {
   email: string
