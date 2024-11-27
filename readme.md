@@ -95,6 +95,11 @@ terraform apply
 terraform destroy
 ```
 
+## Dev do serverless
+```shellscript
+serverless offline start 
+```
+
 ## Usando o Prisma:
 1. Instale o prisma e inicie.
 ```bash

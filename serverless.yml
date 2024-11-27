@@ -6,11 +6,11 @@ provider:
   stage: dev
 
 functions:
-  prod:
+  dev:
     handler: dist/infra/http/lambda.handler
     events:
       - http:
-          path: /
+          path: status/
           method: get
       - http:
           path: users/
