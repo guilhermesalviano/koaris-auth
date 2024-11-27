@@ -1,0 +1,26 @@
+service: koaris-auth
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+
+functions:
+  prod:
+    handler: dist/infra/http/lambda.handler
+    events:
+      - http:
+          path: /
+          method: get
+      - http:
+          path: users/
+          method: get
+      - http:
+          path: users/
+          method: post
+      - http:
+          path: sessions/
+          method: post
+
+plugins:
+  - serverless-offline
