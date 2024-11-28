@@ -21,49 +21,16 @@ resource "aws_lambda_function" "app" {
     }
 }
 
-#resource "aws_lambda_alias" "app_default" {
-#  name             = "default"
-#  description      = "Default lambda alias"
-#  function_name    = aws_lambda_function.app.arn
-#  function_version = aws_lambda_function.app.version
-#}
+resource "aws_lambda_alias" "app_default" {
+  name             = "default"
+  description      = "Default lambda alias"
+  function_name    = aws_lambda_function.app.arn
+  function_version = aws_lambda_function.app.version
+}
 
 resource "aws_lambda_function_url" "app_default" {
   function_name      = aws_lambda_function.app.arn
   authorization_type = "NONE"
-}
-
-resource "aws_iam_role" "handler_lambda_exec" {
-  name = "handler-lambda"
-
-  assume_role_policy = <<POLICY
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-            "Action": "sts:AssumeRole",
-            "Principal": {
-                "Service": [
-                "lambda.amazonaws.com"
-                ]
-            },
-            "Effect": "Allow",
-            "Sid": ""
-            }
-        ]
-    }
-    POLICY
-}
-
-resource "aws_iam_role_policy_attachment" "handler_lambda_policy" {
-  role = aws_iam_role.handler_lambda_exec.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-}
-
-resource "aws_cloudwatch_log_group" "handler" {
-  name = "/aws/lamda/${aws_lambda_function.app.function_name}"
-
-  retention_in_days = 14
 }
 
 #data "archive_file" "lambda_handler" {
@@ -89,4 +56,11 @@ resource "aws_s3_object" "lambda_handler" {
     source = data.external.lambda_zip.result.file_path
 
     etag = filemd5(data.external.lambda_zip.result.file_path)
+}
+
+
+resource "aws_cloudwatch_log_group" "handler" {
+  name = "/aws/lamda/${aws_lambda_function.app.function_name}"
+
+  retention_in_days = 14
 }
