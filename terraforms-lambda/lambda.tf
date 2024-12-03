@@ -17,6 +17,7 @@ resource "aws_lambda_function" "app" {
         LAMBDA_HANDLER = "dist/infra/http/lambda.handler"
         APPLICATION_NAME="koaris-auth"
         APPLICATION_VERSION="$LATEST"
+        DATABASE_URL="url"
       }
     }
 }
